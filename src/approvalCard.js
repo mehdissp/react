@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const ApprovalCard =()=>{
+const ApprovalCard =(props)=>{
+    console.log(props)
 return (
 <div className="ui card">
     <div className="content">
-    lorasv  110 
+        
+    {props.children
+    } 
     </div>
     <div className="extra content">
                 

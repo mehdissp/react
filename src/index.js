@@ -18,20 +18,24 @@ const App = () => {
   return (
     <>
       <div className="ui comments container" style={{marginTop:"30px"}}>
-        <ApprovalCard/>
-        <Comment />
+        <ApprovalCard>
+    
         <CommentDetail author="ali"
           date="1 day"
           comment="salam khare" />
+          </ApprovalCard>
+          <ApprovalCard>
         <CommentDetail
           author="zirfali"
           date="2 day"
           comment="salam khare1" />
+           </ApprovalCard>
+           <ApprovalCard>
         <CommentDetail
           author="shandli"
           date="3 day"
           comment="salam khare2" />
-
+    </ApprovalCard>
       </div>
 
 
