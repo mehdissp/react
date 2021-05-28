@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 function getBtnTxt() {
   return 'click me in fun';
 }
+const btntxt={text:'click asli'};
+const style={backgroundColor:'blue',color:'white'}
 
 const App = () => {
   const BtnTxt = 'Click Me!'
@@ -15,10 +17,7 @@ const App = () => {
         enter name:
     </label>
       <input id="name" type="text" />
-      <button type="button" style={{
-        backgroundColor: 'skyblue'
-        , color: 'white'
-      }}>{getBtnTxt()}</button>
+      <button type="button" style={style}>{btntxt.text}</button>
     </div>
 
   );
