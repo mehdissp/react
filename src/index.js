@@ -48,13 +48,13 @@ class App extends Component {
     console.log('componentDidUpdate', prevprops, prevstate, snapshot);
   }
 
+  renderCp(){
+
+  }
 
   render() {
 
-    if (this.state.lat) {
-
-    }
-
+    
     if (this.state.errorMessage && (!this.state.lat || !this.state.long)) {
       return (<div className="ui negative message">
         <i className="close icon"></i>
