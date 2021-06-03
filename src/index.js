@@ -14,6 +14,13 @@ class App extends Component {
       long: null,
       errorMessage: null
     };
+
+
+  }
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       position => {
         this.setState({
@@ -27,8 +34,15 @@ class App extends Component {
         })
       }
     );
-
+    console.log('componentDidMount');
   }
+  componentWillUpdate(nextprops, nextstate, nextcontext) {
+    console.log('componentWillUpdate', nextprops, nextstate, nextcontext);
+  }
+  componentDidUpdate(prevprops, prevstate, snapshot) {
+    console.log('componentDidUpdate', prevprops, prevstate, snapshot);
+  }
+
 
   render() {
 
@@ -36,7 +50,7 @@ class App extends Component {
 
     }
 
-    if (this.state.errorMessage &&(!this.state.lat || !this.state.long)) {
+    if (this.state.errorMessage && (!this.state.lat || !this.state.long)) {
       return (<div className="ui negative message">
         <i className="close icon"></i>
         <div className="header">
@@ -47,7 +61,7 @@ class App extends Component {
 
     }
 
-    if (!this.state.errorMessage &&(this.state.lat || this.state.long)) {
+    if (!this.state.errorMessage && (this.state.lat || this.state.long)) {
       return (
         <>
           <p>lat :{this.state.lat}</p>
