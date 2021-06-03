@@ -6,17 +6,22 @@ import SeasonDisplay from './seasonDisplay';
 class App extends Component {
   // methods FIRST initialized when you  instanciate classes
   // is called when class is created
-  constructor() {
-    super();
-    // only time you use this.state={}
-    this.state = {
-      lat: null,
-      long: null,
-      errorMessage: null
-    };
+  state = {
+    lat: null,
+    long: null,
+    errorMessage: null
+  };
+  // constructor() {
+  //   super();
+  //   // only time you use this.state={}
+  //   this.state = {
+  //     lat: null,
+  //     long: null,
+  //     errorMessage: null
+  //   };
 
 
-  }
+  // }
   componentWillMount() {
     console.log('componentWillMount');
   }
@@ -64,10 +69,9 @@ class App extends Component {
     if (!this.state.errorMessage && (this.state.lat || this.state.long)) {
       return (
         <>
-          <p>lat :{this.state.lat}</p>
-          <p>lan :{this.state.long}</p>
+      
 
-          <p>  <SeasonDisplay /></p>
+          <p>  <SeasonDisplay lat={this.state.lat} long={this.state.long}/></p>
           <br />
 
 
