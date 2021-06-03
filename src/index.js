@@ -69,9 +69,9 @@ class App extends Component {
     if (!this.state.errorMessage && (this.state.lat || this.state.long)) {
       return (
         <>
-      
 
-          <p>  <SeasonDisplay lat={this.state.lat} long={this.state.long}/></p>
+
+          <p>  <SeasonDisplay lat={this.state.lat} long={this.state.long} /></p>
           <br />
 
 

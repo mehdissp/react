@@ -12,12 +12,14 @@ else{
 }
 const SeasonDisplay =(props)=>{
     const season=getSeason(props.lat,new Date().getMonth())
-    console.log(season)
+    const text=  season ==='winter' ? 'booo sarde' :'gar mamemeeeeeeeeeee';
 return(
     <>
-  <p>lat :{props.lat}</p>
-  <p>
-  long :{props.long}   </p>  
+    <h1>
+        {text}
+    {/* {season ==='winter' ? 'booo sarde' :'gar mamemeeeeeeeeeee'} */}
+    </h1>
+
     
     </>
 )
