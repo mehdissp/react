@@ -1,7 +1,7 @@
 import { React, Component } from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './seasonDisplay';
-
+import Spinner from './spinner'
 
 class App extends Component {
   // methods FIRST initialized when you  instanciate classes
@@ -79,12 +79,7 @@ class App extends Component {
       )
     }
     return (
-      <div className="ui segment">
-        <div className="ui active inverted dimmer">
-          <div className="ui text loader">Loading</div>
-        </div>
-        <p></p>
-      </div>
+      <Spinner message="allow your location"/>
     )
 
   }
