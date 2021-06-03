@@ -9,34 +9,66 @@ class App extends Component {
   constructor() {
     super();
     // only time you use this.state={}
-    this.state={
-      lat :null,
-      long:null
+    this.state = {
+      lat: null,
+      long: null,
+      errorMessage: null
     };
     window.navigator.geolocation.getCurrentPosition(
       position => {
         this.setState({
-          lat :position.coords.latitude,
-          long :position.coords.longitude
+          lat: position.coords.latitude,
+          long: position.coords.longitude
         })
       },
-      error => {console.log(error)}
+      error => {
+        this.setState({
+          errorMessage: error.message
+        })
+      }
     );
 
   }
 
   render() {
- 
+
+    if (this.state.lat) {
+
+    }
+
+    if (this.state.errorMessage &&(!this.state.lat || !this.state.long)) {
+      return (<div className="ui negative message">
+        <i className="close icon"></i>
+        <div className="header">
+          Error
+      </div>
+        <p>{this.state.errorMessage}
+        </p></div>);
+
+    }
+
+    if (!this.state.errorMessage &&(this.state.lat || this.state.long)) {
+      return (
+        <>
+          <p>lat :{this.state.lat}</p>
+          <p>lan :{this.state.long}</p>
+
+          <p>  <SeasonDisplay /></p>
+          <br />
+
+
+        </>
+      )
+    }
     return (
-      <>
-        <p>lat :{this.state.lat}</p>
-        <p>lan :{this.state.long}</p>
-        <p>  <SeasonDisplay /></p>
-        <br />
-
-
-      </>
+      <div className="ui segment">
+        <div className="ui active inverted dimmer">
+          <div className="ui text loader">Loading</div>
+        </div>
+        <p></p>
+      </div>
     )
+
   }
 }
 
