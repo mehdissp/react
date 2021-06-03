@@ -1,10 +1,10 @@
 import React from 'react';
 import SearchBar from './SearchBar'
 
-const App =()=>{
-    return(
-        <div className="ui container" style={{'margin-top':'10px'}}>
-            <SearchBar/>
+const App = () => {
+    return (
+        <div className="ui container" style={{ 'margin-top': '10px' }}>
+            <SearchBar />
         </div>
     )
 }
