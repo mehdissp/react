@@ -6,6 +6,7 @@ class SearchBar extends React.Component {
     //     event.persist();
     //     console.log(event)
     // }
+    state ={term:''}
 
     render() {
         return (
@@ -17,7 +18,7 @@ class SearchBar extends React.Component {
                                 <label>
                                     image search
                                 </label>
-                                <input type="text" onChange={event=> console.log(event.target.value)} />
+                                <input value={this.state.term} type="text" onChange={event=> this.setState({term:event.target.value})} />
 
                             </div>
                         </div>
